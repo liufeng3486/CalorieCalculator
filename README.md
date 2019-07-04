@@ -8,4 +8,4 @@ flask 运行 app.py
 
 
 随手做的，以快为主，很多东西没做管理。但是基本满足需求
-[](https://github.com/liufeng3486/CalorieCalculator/blob/master/1.png?raw=true)
+![](https://github.com/liufeng3486/CalorieCalculator/blob/master/1.png?raw=true)
