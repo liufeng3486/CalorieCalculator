@@ -1,0 +1,180 @@
+//js for can
+function itemHoverFix(panel_id){
+    $("#"+panel_id).find(".item-list-wrap").hover(
+        function(){ $(this).addClass("hover"); },
+        function(){ $(this).removeClass("hover"); }
+    );
+}
+
+function intrHoverFix(panel_id){
+    $("#"+panel_id).find(".item-name").hover(
+        function(){ $(this).parents(".intr").addClass("intr-hover"); },
+        function(){ $(this).parents(".intr").removeClass("intr-hover"); }
+    );
+}
+
+function addHoverFix(panel_id){
+    $("#"+panel_id).find(".oper").hover(
+        function(){ $(this).addClass("add-hover"); },
+        function(){ $(this).removeClass("add-hover"); }
+    );
+}
+
+function choose_one_time(k,date){
+    choose_food();
+    $("#food_record > .record-panel").removeClass("current");
+    $("#sport_record_panel").removeClass("current");
+    $("#h"+k).addClass("current");        
+    $('#menu').load('/can/choose_eating_time?date='+date+'&et='+k,function() {
+        $('#menu_history').hide();
+        $('#menu').show();
+    });
+    return false;
+}
+function choose_history(){
+    $("#sport_record_wrap").removeClass("upper");
+    $("#food_record_wrap").addClass("upper");
+    $("#sport_tab").removeClass("current");
+    $("#food_tab").addClass("current");
+    $('#menu').hide();
+    $('#menu_history').show();
+}
+function choose_food(){
+    $("#sport_record_wrap").removeClass("upper");
+    $("#food_record_wrap").addClass("upper");
+    $("#sport_tab").removeClass("current");
+    $("#food_tab").addClass("current");
+}
+function choose_sport(){
+    $('#menu_history').hide();
+    $('#menu').show();
+    $("#sport_record_wrap").addClass("upper");
+    $("#food_record_wrap").removeClass("upper");
+    $("#food_tab").removeClass("current");
+    $("#sport_tab").addClass("current");
+}
+function choose_to_food(date){
+    choose_food();
+    $('#menu').load('/can/choose_eating_time?date='+date+'&et='+1,function(){
+        $("#food_record > .record-panel").removeClass("current");
+        $("#sport_record_panel").removeClass("current");
+        $("#h1").addClass("current");
+    });
+}
+function choose_to_sport(date){
+    choose_sport();
+    $('#menu').load('/can/choose_activity?date='+date+'&et=5');
+}
+function edit_item_unit(eating_item_id,et,date) {
+    var edit_box = $("#can_edit_food");
+    edit_box.find(".panel-body").load("/can/show_select?et="+et+"&date="+date+"&eating_item_id="+eating_item_id,function(){
+        var tarPosition = $("#amount_"+eating_item_id).position();
+		var tarX = tarPosition.left + "px";
+		var tarY = tarPosition.top + 21 + "px";
+		edit_box.css({top:tarY,left:tarX}).show();
+    });
+    return false;
+}
+function edit_activity_unit(activity_item_id,date){
+    var edit_box = $("#can_edit_activity");
+    edit_box.find(".panel-body").load("/can/show_activity_select?et=5"+"&date="+date+"&activity_item_id="+activity_item_id,function(){
+		var tarPosition = $("#amount_a"+activity_item_id).position();
+		var tarX = tarPosition.left + "px";
+		var tarY = tarPosition.top + 21 + "px";
+		edit_box.css({top:tarY,left:tarX}).show();
+    });
+    return false;
+}
+function add_top_class(which_one,et){
+    $("#can_menu_tab > .sub-top-item").removeClass("current");
+    if(which_one=='normal_eating'){
+        $("#normal_eating").addClass("current");
+    } else if(which_one=='all_my_foods'){
+        $("#all_my_foods").addClass("current");
+    } else if(which_one=='all_my_meal'){
+        $("#all_my_meal").addClass("current");
+    } else if(which_one=='not_find'){
+        $("#not_find").addClass("current");
+    }
+}
+function submit_food(food_id,et){
+    close_select_food(food_id,et);
+}
+function add_num(food_id,et){
+    var eat_amount = $("#eating_num_"+food_id+"_"+et).val();
+    $("#eating_num_"+food_id+"_"+et).val(Number(eat_amount) + 1);
+}
+function dim_num(food_id,et){
+    var eat_amount = $("#eating_num_"+food_id+"_"+et).val();
+    $("#eating_num_"+food_id+"_"+et).val(Number(eat_amount) - 1);
+}
+function add_item_num(eating_item_id){
+    var eat_amount = $("#eating_num_"+eating_item_id).val();
+    $("#eating_num_"+eating_item_id).val(Number(eat_amount) + 1);
+}
+function dim_item_num(eating_item_id){
+    var eat_amount = $("#eating_num_"+eating_item_id).val();
+    $("#eating_num_"+eating_item_id).val(Number(eat_amount) - 1);
+}
+function add_activity(activity_item_id){
+    var activity_amount = $("#activity_"+activity_item_id).val();
+    $("#activity_"+activity_item_id).val(Number(activity_amount) + 1);
+}
+function dim_activity(activity_item_id){
+    var activity_amount = $("#activity_"+activity_item_id).val();
+    $("#activity_"+activity_item_id).val(Number(activity_amount) - 1);
+}
+function close_select_body() {
+    $("#can_edit_food").hide();
+}
+function close_activity_body(){
+    $("#can_edit_activity").hide();
+}
+function edit_unit(food_id,et,date){
+
+    tarObj = $('.pop-oper:visible:first').parents('.item-list');
+    tarObj.css({
+        position:"static",
+        "z-index":0
+    });
+    $(tarObj).find('.pop-oper:visible:first').hide();
+
+    $("#select_food"+food_id+"_"+et).find(".panel-body").load("/can/show_select?et="+et+"&date="+date+"&food_id="+food_id,function() {
+        var tarObj = $("#item_"+food_id+"_"+et);
+        tarObj.css({
+            position:"relative",
+            "z-index":2
+        });
+        $("#select_food"+food_id+"_"+et).show();
+    });
+    return false;
+}
+
+function edit_unit_with_search(food_id,et,date,is_search,key){
+    tarObj = $('.pop-oper:visible:first').parents('.item-list');
+    tarObj.css({
+        position:"static",
+        "z-index":0
+    });
+    $(tarObj).find('.pop-oper:visible:first').hide();
+    key =  encodeURIComponent(key)
+
+    $("#select_food"+food_id+"_"+et).find(".panel-body").load("/can/show_select?et="+et+"&date="+date+"&food_id="+food_id+"&is_search="+is_search+"&key="+key,function() {
+        var tarObj = $("#item_"+food_id+"_"+et);
+        tarObj.css({
+            position:"relative",
+            "z-index":2
+        });
+        $("#select_food"+food_id+"_"+et).show();
+    });
+    return false;
+}
+
+function close_select_food(food_id,et){
+    var tarObj = $("#item_"+food_id+"_"+et);
+    tarObj.css({
+        position:"static",
+        "z-index":0
+    });
+    $("#select_food"+food_id+"_"+et).hide();
+}

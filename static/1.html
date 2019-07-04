@@ -1,0 +1,200 @@
+<div class="can-record-tab">
+    <li class="float-left">
+        <a id="food_tab" class="food-tab current" href="#" onclick = "choose_to_food('2019-07-02')"></a>
+    </li>
+    <li class="float-right">
+        <a id="sport_tab" class="sport-tab" href="#" onclick = "choose_to_sport('2019-07-02')"></a>
+    </li>
+</div>
+<div class="can-record" id="can_record">
+    <div id="food_record_wrap" class="food-record-wrap upper">
+        <div class="food-progress" style="height:14px"></div>
+        <div id="food_record" class="food-record">
+            <div id='h1' class="record-panel">
+                <h2 class="record-title meal1" onclick = "choose_one_time(1,'2019-07-02')">
+                    <span class="float-left" style="padding-right:10px;">���&nbsp;</span>
+                    <span class="float-left size12 lighter">(144��)</span>
+                    <span class="toggle float-right"></span>
+	      
+                </h2>
+                <div class="record-body">
+                    <table cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="name">
+                                <div class="limit" title="����">����</div>
+                            </td>
+                            <td class="unit">
+                                <a class="unit-box" id="amount_37237148" onclick="edit_item_unit(37237148,1,'2019-07-02');" href="javascript:void(0);">
+                                    <span class="limit">
+      100
+        ��
+	  </span>
+	
+                                </a>
+  
+                            </td>
+                            <td class="cal">
+                                <div class="limit right" title="144.0��">144��</div>
+                            </td>
+                            <td class="delete">
+                                <a href="#" onclick="$.ajax({async:true, data:&#x27;authenticity_token=&#x27; + encodeURIComponent(&#x27;cn4ZcgyM2B4pxxbq7Z9ZpHTs/1b6E3KVnY1OBy+kcaI=&#x27;), success:function(request){$(&#x27;#md_record&#x27;).html(request);}, type:&#x27;post&#x27;, url:&#x27;/can/remove_eating/37237148?date=2019-07-02&amp;et=1&#x27;}); return false;"></a>
+                            </td>
+                        </tr>
+
+			  
+                    </table>
+		  
+                </div>
+		
+            </div>
+            <div id='h6' class="record-panel">
+                <h2 class="record-title meal6" onclick = "choose_one_time(6,'2019-07-02')">
+                    <span class="float-left" style="padding-right:10px;">����Ӳ�&nbsp;</span>
+                    <span class="float-left size12 lighter">(0��)</span>
+                    <span class="toggle float-right"></span>
+	      
+                </h2>
+                <div class="record-body">
+                    <p>������ѡ��ʳ�Ȼ����"���"��</p>
+		  
+                </div>
+		
+            </div>
+            <div id='h2' class="record-panel">
+                <h2 class="record-title meal2" onclick = "choose_one_time(2,'2019-07-02')">
+                    <span class="float-left" style="padding-right:10px;">���&nbsp;</span>
+                    <span class="float-left size12 lighter">(0��)</span>
+                    <span class="toggle float-right"></span>
+	      
+                </h2>
+                <div class="record-body">
+                    <p>������ѡ��ʳ�Ȼ����"���"��</p>
+		  
+                </div>
+		
+            </div>
+            <div id='h7' class="record-panel">
+                <h2 class="record-title meal7" onclick = "choose_one_time(7,'2019-07-02')">
+                    <span class="float-left" style="padding-right:10px;">����Ӳ�&nbsp;</span>
+                    <span class="float-left size12 lighter">(0��)</span>
+                    <span class="toggle float-right"></span>
+	      
+                </h2>
+                <div class="record-body">
+                    <p>������ѡ��ʳ�Ȼ����"���"��</p>
+		  
+                </div>
+		
+            </div>
+            <div id='h3' class="record-panel">
+                <h2 class="record-title meal3" onclick = "choose_one_time(3,'2019-07-02')">
+                    <span class="float-left" style="padding-right:10px;">���&nbsp;</span>
+                    <span class="float-left size12 lighter">(0��)</span>
+                    <span class="toggle float-right"></span>
+	      
+                </h2>
+                <div class="record-body">
+                    <p>������ѡ��ʳ�Ȼ����"���"��</p>
+		  
+                </div>
+		
+            </div>
+            <div id='h8' class="record-panel">
+                <h2 class="record-title meal8" onclick = "choose_one_time(8,'2019-07-02')">
+                    <span class="float-left" style="padding-right:10px;">���ϼӲ�&nbsp;</span>
+                    <span class="float-left size12 lighter">(0��)</span>
+                    <span class="toggle float-right"></span>
+	      
+                </h2>
+                <div class="record-body">
+                    <p>������ѡ��ʳ�Ȼ����"���"��</p>
+		  
+                </div>
+		
+            </div>
+	
+        </div>
+  
+    </div>
+    <div id="sport_record_wrap" class="sport-record-wrap">
+        <div class="sport-progress" style="height:0px"></div>
+        <div id="sport_record" class="sport-record">
+            <div id="sport_record_panel" class="record-panel sport-current">
+                <h2 class="record-title">�</h2>
+                <p id="sportTip">����ֵ�������������������ء�Ϊ����ϴ���������
+                    <a href="http://www.boohee.com/profile/login" target="_blank">��¼</a>�����ڿռ�
+                    <a href="http://www.boohee.com/record/new_weight" target="_blank">��������</a>��
+                </p>
+                <div class="record-body">
+                    <p>������ѡ����Ȼ����"���"��</p>
+		
+                </div>
+	  
+            </div>
+            <div style="border-top:1px solid #CCC;padding-top:10px;margin:0 10px;">* ������ = ����� + 
+                <a href="/assessment/bmr" target="_blank">
+                    <span class="green1">������л��</span>
+                </a>
+            </div>
+    
+        </div>
+  
+    </div>
+    <div id="can_edit_food" class="pop-oper size12">
+        <div class="pop-panel">
+            <div class="panel-head">
+                <span></span>
+            </div>
+            <div class="panel-body"></div>
+            <div class="panel-foot">
+                <span></span>
+            </div>
+    
+        </div>
+  
+    </div>
+    <div id="can_edit_activity" class="pop-oper size12">
+        <div class="pop-panel">
+            <div class="panel-head">
+                <span></span>
+            </div>
+            <div class="panel-body"></div>
+            <div class="panel-foot">
+                <span></span>
+            </div>
+    
+        </div>
+  
+    </div>
+</div>
+<div class="can-result">
+    <div class="sum float-left size14">
+        <p class="divide5">��ʳ����
+            <span class="stress">:</span>
+            <span class="red1 stress">144</span> ��
+        </p>
+        <p>�����
+            <span class="stress">:</span>
+            <span class="green1 stress">0</span> ��
+        </p>
+    
+    </div>
+    <div class="oper float-right">
+        <p class="margin10">
+            <a href="/assessment/can_save/8476616" class="red-button2" onclick="var f = document.createElement(&#x27;form&#x27;); f.style.display = &#x27;none&#x27;; this.parentNode.appendChild(f); f.method = &#x27;POST&#x27;; f.action = this.href;var s = document.createElement(&#x27;input&#x27;); s.setAttribute(&#x27;type&#x27;, &#x27;hidden&#x27;); s.setAttribute(&#x27;name&#x27;, &#x27;authenticity_token&#x27;); s.setAttribute(&#x27;value&#x27;, &#x27;cn4ZcgyM2B4pxxbq7Z9ZpHTs/1b6E3KVnY1OBy+kcaI=&#x27;); f.appendChild(s);f.submit();return false;">���浽�ռ�</a>
+	  
+        </p>
+        <p class="center">
+            <a href="#" onclick="$.ajax({async:true, complete:function(request){copyToClipboard(request.responseText)}, data:&#x27;authenticity_token=&#x27; + encodeURIComponent(&#x27;cn4ZcgyM2B4pxxbq7Z9ZpHTs/1b6E3KVnY1OBy+kcaI=&#x27;), dataType:&#x27;script&#x27;, type:&#x27;post&#x27;, url:&#x27;/can/copy_record_to_clipboard?date=2019-07-02&amp;et=1&#x27;}); return false;" title="���Ƶ����а�">����</a>&nbsp;&nbsp;|&nbsp;
+		  
+            <a href="#" onclick="if (confirm(&#x27;��ȷ�������ʳ�˶���¼��&#x27;)) { $.ajax({async:true, data:&#x27;authenticity_token=&#x27; + encodeURIComponent(&#x27;cn4ZcgyM2B4pxxbq7Z9ZpHTs/1b6E3KVnY1OBy+kcaI=&#x27;), success:function(request){$(&#x27;#md_record&#x27;).html(request);}, type:&#x27;post&#x27;, url:&#x27;/can/clear_record?date=2019-07-02&amp;et=1&#x27;}); }; return false;">���</a>
+	  
+        </p>
+    
+    </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+  		$("#h1").addClass("current");
+});
+</script>	
