@@ -17,4 +17,5 @@ flask 运行 app.py
 以下几个主要的CSS,JS项目中包含，但是未引用。使用的是薄荷网远端的
 "http://s.boohee.cn/stylesheets/base_4_772ab8f8175d9822a69dc7124d684c6d.css?1561614115"
 "http://s.boohee.cn/stylesheets/can.css?1561614115"
+
 "http://s.boohee.cn/javascripts/base_packaged.js?1561614115" 
