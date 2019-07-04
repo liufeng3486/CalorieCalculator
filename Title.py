@@ -55,8 +55,7 @@ Solo = '''
     </div>
 '''
 
-Page_Current = '<em class="current">PAGENUM</em> '
-Page = '<a href="#" onclick="change_title(CHANGE,Page)">Page</a> '
+
 Empty = '''
 <ul class="can-tab center size13">
     <li class="meal1"><a href="javascript:void(0);" onclick="change_title(1,1)" class="CHANGE1">蔬菜</a></li>
@@ -131,7 +130,7 @@ Empty = '''
 # temp = Empty.replace("SOLO",Solo+Solo+Solo+Solo+Solo)
 # def getTemp(change,page):
 #     return temp
-Page_Current = '<em class="current">PAGENUM</em> '
+Page_Current = '<em class="current"><b>PAGENUM</b></em> '
 Page = '<a href="#" onclick="change_title(CHANGE,PAGENUM)">PAGENUM</a> '
 import copy
 def getTemp(change,page):
