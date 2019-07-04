@@ -14,7 +14,7 @@ flask 运行 app.py
 ![](https://github.com/liufeng3486/CalorieCalculator/blob/master/1.png?raw=true)
 
 
-以下几个主要的CSS,JS项目中包含，但是未引用。使用的是薄荷网远端的
+以下几个主要的CSS,JS项目中包含，但是未引用。使用的是薄荷网远端的。如果薄荷网的文件更新了，可以重新配置静态文件
 "http://s.boohee.cn/stylesheets/base_4_772ab8f8175d9822a69dc7124d684c6d.css?1561614115"
 "http://s.boohee.cn/stylesheets/can.css?1561614115"
 
